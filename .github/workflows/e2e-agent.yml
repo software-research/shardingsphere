@@ -1,4 +1,4 @@
-#
+# #11
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
 # this work for additional information regarding copyright ownership.
@@ -17,22 +17,7 @@
 
 name: E2E - Agent
 
-on:
-  pull_request:
-    branches: [ master ]
-    paths:
-      - '.github/workflows/e2e-agent.yml'
-      - '**/pom.xml'
-      - '**/src/main/**'
-      - '!test/**'
-      - 'test/pom.xml'
-      - 'test/e2e/agent/**'
-      - '!distribution/**'
-      - 'distribution/proxy/**'
-      - 'distribution/jdbc/**'
-      - '!examples/**'
-      - '!*.md'
-  workflow_dispatch:
+on: push
 
 concurrency:
   group: e2e-${{ github.workflow }}-${{ github.ref }}
